@@ -1,8 +1,8 @@
 # [Nombre del proyecto]
 
-**Alumno:** [Apellido, Nombre]
-**Curso:** [Nombre del curso]
-**Fecha de inicio:** [dd/mm/aaaa]
+**Alumno:** [villa, samuel]
+**Curso:** [ing. en sistemas, primer semestre]
+**Fecha de inicio:** [21/07/2026]
 
 ## 1. Objetivo del proyecto
 

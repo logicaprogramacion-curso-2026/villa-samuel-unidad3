@@ -24,3 +24,11 @@ Registra aquí cada sesión de trabajo. Un commit por avance, con un mensaje cla
 - Próximo paso:
 
 <!-- Agrega tantas secciones como sesiones de trabajo tengas -->
+
+## Registro de sesiones
+
+### [21/07/2026] — Fase 1: creacion de entidades
+- Qué hice:
+- Qué problema encontré:
+- Cómo lo resolví:
+- Próximo paso:

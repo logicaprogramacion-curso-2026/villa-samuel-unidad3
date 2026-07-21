@@ -4,3 +4,6 @@
 ### Elementos:
 clase docente 
 clase database
+class foro_dao 
+crear tabla 
+insertar

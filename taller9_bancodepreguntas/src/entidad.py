@@ -6,10 +6,9 @@ class pregunta:
                  opcion_b = "",
                  opcion_c = "",
                  opcion_d = "",
-                 repuesta_correcta = "",
+                 respuesta_correcta = "",
                  dificultad = "",
                  tema = ""):
-    
     
         self.id = id
         self.pregunta = pregunta
@@ -17,12 +16,10 @@ class pregunta:
         self.opcion_b = opcion_b
         self.opcion_c = opcion_c
         self.opcion_d = opcion_d
-        self.repuesta_correcta = repuesta_correcta
+        self.respuesta_correcta = respuesta_correcta
         self.dificultad = dificultad
-        self.tema = tema
-        
+        self.tema = tema   
         print("constructor con argumentos")
-    
     def __str__(self):
         return (
         f"Pregunta(id={self.id}, "

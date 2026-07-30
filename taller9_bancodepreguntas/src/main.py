@@ -1,15 +1,15 @@
 from database import Database
 from dao import preguntaDAO
-from entidad import pregunta
+from gestor import Gestor
+import os
 
-
-# Crear conexión
+# Conexión
 db = Database()
 
 print("Conexión exitosa")
 
 
-# Crear DAO
+# DAO
 dao = preguntaDAO(db)
 
 
@@ -19,39 +19,68 @@ dao.crear_tabla()
 print("Tabla preguntas creada")
 
 
-# Insertar pregunta de prueba
+# Gestor de archivos
+gestor = Gestor()
 
-p1 = pregunta(
-    pregunta="¿Cuál es la capital de Ecuador?",
-    opcion_a="Quito",
-    opcion_b="Guayaquil",
-    opcion_c="Cuenca",
-    opcion_d="Loja",
-    respuesta_correcta="A",
-    dificultad="Fácil",
-    tema="Geografía"
+
+print("""
+========================
+ CARGAR PREGUNTAS
+========================
+
+1. Cargar TXT
+2. Cargar CSV
+3. Cargar JSON
+""")
+
+
+opcion = input("Seleccione una opción: ")
+
+
+if opcion == "1":
+    ruta_txt = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        "datos",
+        "PREGUNTAS_PYTHON.txt"
+    )
+    gestor.cargar_desde_txt(ruta_txt)
+
+elif opcion == "2":
+    ruta_csv = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        "datos",
+        "PREGUNTAS_PYTHON.csv"
+    )
+    gestor.cargar_desde_csv(ruta_csv)
+
+elif opcion == "3":
+    ruta_json = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        "datos",
+        "PREGUNTAS_PYTHON.json"
+    )
+    gestor.cargar_desde_json(ruta_json)
+
+else:
+    print("Opción inválida")
+
+
+# Guardar preguntas en SQLite
+
+for p in gestor.preguntas:
+    dao.insertar(p)
+
+
+print(
+    "Total preguntas guardadas:",
+    len(gestor.preguntas)
 )
 
-print("Respuesta correcta:", p1.respuesta_correcta)
-dao.insertar(p1)
 
-print("Inserción realizada")
+# Mostrar algunas preguntas
 
-
-# Mostrar todas
-
-preguntas = dao.obtener_todas()
-
-for p in preguntas:
-    print(p)
-
-
-# Buscar por ID
-
-resultado = dao.obtener_por_id(1)
-
-print("Pregunta encontrada:")
-print(resultado)
+for p in gestor.preguntas[:50]:
+    print(p.pregunta)
 
 
 db.cerrar()

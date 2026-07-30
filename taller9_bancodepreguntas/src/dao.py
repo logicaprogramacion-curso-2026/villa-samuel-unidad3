@@ -22,6 +22,7 @@ class preguntaDAO:
         ''')
 
     def insertar(self, pregunta):
+       
         self.db.cursor.execute('''
             INSERT INTO preguntas (
                 pregunta,

@@ -19,7 +19,7 @@ class pregunta:
         self.respuesta_correcta = respuesta_correcta
         self.dificultad = dificultad
         self.tema = tema   
-        print("constructor con argumentos")
+
     def __str__(self):
         return (
         f"Pregunta(id={self.id}, "

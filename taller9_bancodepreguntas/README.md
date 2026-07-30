@@ -19,3 +19,21 @@ Jacome Garcia Emerson
 ![archivo1](image-1.png)
 ![archivo2](image-6.png)
 ![archivo3](image-7.png)
+
+## 🗄️ Base de Datos SQLite
+- ✅ Tabla 'preguntas' creada
+- ✅ Conexión exitosa
+- ✅ Métodos CRUD implementados
+
+![estructura de la tabla](image-8.png)
+![insercion](image-9.png)
+
+
+## 📥 Carga de Datos desde Archivos
+- ✅ Carga desde TXT: 50 preguntas cargadas
+- ✅ Carga desde CSV: 50 preguntas cargadas
+- ✅ Carga desde JSON: 50 preguntas cargadas
+
+![txt](image.png)
+![csv](image-1.png)
+![json](image-2.png)

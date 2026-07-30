@@ -1,20 +1,20 @@
 ================================================================================
-                    CUESTIONARIO DE PROGRAMACI�N EN PYTHON
-                    50 PREGUNTAS DE SELECCI�N M�LTIPLE
+                    CUESTIONARIO DE PROGRAMACIÓN EN PYTHON
+                    50 PREGUNTAS DE SELECCIÓN MÚLTIPLE
 ================================================================================
 
 TOTAL DE PREGUNTAS: 50
-NIVEL: B�sico-Intermedio
-TEMAS: Operadores Aritm�ticos, Funciones Built-in, Listas, Strings, 
+NIVEL: Básico-Intermedio
+TEMAS: Operadores Aritméticos, Funciones Built-in, Listas, Strings, 
        Tipos de Datos, Bucles, Diccionarios, entre otros.
 
 ================================================================================
 PREGUNTA #1
 --------------------------------------------------------------------------------
 ID: 1
-Tema: Operadores Aritm�ticos
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de print(5 // 2)?
+Tema: Operadores Aritméticos
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de print(5 // 2)?
 
 Opciones:
 A) 2.5
@@ -29,8 +29,8 @@ PREGUNTA #2
 --------------------------------------------------------------------------------
 ID: 2
 Tema: Funciones Built-in
-Dificultad: F�cil
-Enunciado: �Qu� funci�n obtiene la longitud de una lista?
+Dificultad: Fácil
+Enunciado: ¿Qué función obtiene la longitud de una lista?
 
 Opciones:
 A) size()
@@ -44,9 +44,9 @@ Respuesta Correcta: C
 PREGUNTA #3
 --------------------------------------------------------------------------------
 ID: 3
-Tema: Operadores Aritm�ticos
-Dificultad: F�cil
-Enunciado: �Cu�l es el resultado de 3 ** 2?
+Tema: Operadores Aritméticos
+Dificultad: Fácil
+Enunciado: ¿Cuál es el resultado de 3 ** 2?
 
 Opciones:
 A) 6
@@ -61,8 +61,8 @@ PREGUNTA #4
 --------------------------------------------------------------------------------
 ID: 4
 Tema: Listas
-Dificultad: F�cil
-Enunciado: �Qu� m�todo agrega un elemento al final de una lista?
+Dificultad: Fácil
+Enunciado: ¿Qué método agrega un elemento al final de una lista?
 
 Opciones:
 A) add()
@@ -78,7 +78,7 @@ PREGUNTA #5
 ID: 5
 Tema: Bucles
 Dificultad: Media
-Enunciado: �Cu�l es la salida de for i in range(3): print(i, end=' ')?
+Enunciado: ¿Cuál es la salida de for i in range(3): print(i, end=' ')?
 
 Opciones:
 A) 0 1 2
@@ -93,8 +93,8 @@ PREGUNTA #6
 --------------------------------------------------------------------------------
 ID: 6
 Tema: Funciones
-Dificultad: F�cil
-Enunciado: �Qu� palabra clave define una funci�n?
+Dificultad: Fácil
+Enunciado: ¿Qué palabra clave define una función?
 
 Opciones:
 A) function
@@ -110,7 +110,7 @@ PREGUNTA #7
 ID: 7
 Tema: Listas
 Dificultad: Media
-Enunciado: �Cu�l es la salida de lista[1]=5 en [1,2,3]?
+Enunciado: ¿Cuál es la salida de lista[1]=5 en [1,2,3]?
 
 Opciones:
 A) [1,2,3]
@@ -126,7 +126,7 @@ PREGUNTA #8
 ID: 8
 Tema: Operadores de Identidad
 Dificultad: Media
-Enunciado: �Qu� hace el operador 'is'?
+Enunciado: ¿Qué hace el operador 'is'?
 
 Opciones:
 A) Compara valores
@@ -141,8 +141,8 @@ PREGUNTA #9
 --------------------------------------------------------------------------------
 ID: 9
 Tema: Diccionarios
-Dificultad: F�cil
-Enunciado: �C�mo se crea un diccionario?
+Dificultad: Fácil
+Enunciado: ¿Cómo se crea un diccionario?
 
 Opciones:
 A) {1,2,3}
@@ -157,8 +157,8 @@ PREGUNTA #10
 --------------------------------------------------------------------------------
 ID: 10
 Tema: Entrada/Salida
-Dificultad: F�cil
-Enunciado: �Qu� funci�n lee entrada del usuario?
+Dificultad: Fácil
+Enunciado: ¿Qué función lee entrada del usuario?
 
 Opciones:
 A) read()
@@ -174,7 +174,7 @@ PREGUNTA #11
 ID: 11
 Tema: Tipos de Datos
 Dificultad: Media
-Enunciado: �Cu�l es la salida de bool([])?
+Enunciado: ¿Cuál es la salida de bool([])?
 
 Opciones:
 A) True
@@ -190,7 +190,7 @@ PREGUNTA #12
 ID: 12
 Tema: Listas
 Dificultad: Media
-Enunciado: �Qu� m�todo elimina el �ltimo elemento de una lista?
+Enunciado: ¿Qué método elimina el último elemento de una lista?
 
 Opciones:
 A) remove()
@@ -205,8 +205,8 @@ PREGUNTA #13
 --------------------------------------------------------------------------------
 ID: 13
 Tema: Strings
-Dificultad: F�cil
-Enunciado: �Cu�l es el resultado de 'Hola' * 2?
+Dificultad: Fácil
+Enunciado: ¿Cuál es el resultado de 'Hola' * 2?
 
 Opciones:
 A) 'HolaHola'
@@ -222,7 +222,7 @@ PREGUNTA #14
 ID: 14
 Tema: Manejo de Errores
 Dificultad: Media
-Enunciado: �Qu� palabra clave se usa para manejar excepciones?
+Enunciado: ¿Qué palabra clave se usa para manejar excepciones?
 
 Opciones:
 A) try
@@ -238,7 +238,7 @@ PREGUNTA #15
 ID: 15
 Tema: Funciones Built-in
 Dificultad: Media
-Enunciado: �Cu�l es la salida de len(range(5))?
+Enunciado: ¿Cuál es la salida de len(range(5))?
 
 Opciones:
 A) 4
@@ -253,8 +253,8 @@ PREGUNTA #16
 --------------------------------------------------------------------------------
 ID: 16
 Tema: Listas
-Dificultad: F�cil
-Enunciado: �C�mo se accede al primer elemento de una lista llamada 'datos'?
+Dificultad: Fácil
+Enunciado: ¿Cómo se accede al primer elemento de una lista llamada 'datos'?
 
 Opciones:
 A) datos[0]
@@ -268,9 +268,9 @@ Respuesta Correcta: A
 PREGUNTA #17
 --------------------------------------------------------------------------------
 ID: 17
-Tema: Conversi�n de Tipos
-Dificultad: F�cil
-Enunciado: �Qu� funci�n convierte un string a entero?
+Tema: Conversión de Tipos
+Dificultad: Fácil
+Enunciado: ¿Qué función convierte un string a entero?
 
 Opciones:
 A) str()
@@ -284,9 +284,9 @@ Respuesta Correcta: B
 PREGUNTA #18
 --------------------------------------------------------------------------------
 ID: 18
-Tema: Operadores Aritm�ticos
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de print(10 % 3)?
+Tema: Operadores Aritméticos
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de print(10 % 3)?
 
 Opciones:
 A) 1
@@ -302,7 +302,7 @@ PREGUNTA #19
 ID: 19
 Tema: Strings
 Dificultad: Media
-Enunciado: �Qu� m�todo convierte una lista en un string?
+Enunciado: ¿Qué método convierte una lista en un string?
 
 Opciones:
 A) join()
@@ -317,8 +317,8 @@ PREGUNTA #20
 --------------------------------------------------------------------------------
 ID: 20
 Tema: Tipos de Datos
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de type([])?
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de type([])?
 
 Opciones:
 A) list
@@ -333,8 +333,8 @@ PREGUNTA #21
 --------------------------------------------------------------------------------
 ID: 21
 Tema: Strings
-Dificultad: F�cil
-Enunciado: �Qu� operador se usa para concatenar strings?
+Dificultad: Fácil
+Enunciado: ¿Qué operador se usa para concatenar strings?
 
 Opciones:
 A) +
@@ -349,8 +349,8 @@ PREGUNTA #22
 --------------------------------------------------------------------------------
 ID: 22
 Tema: Strings
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de 'Python'[0]?
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de 'Python'[0]?
 
 Opciones:
 A) P
@@ -366,7 +366,7 @@ PREGUNTA #23
 ID: 23
 Tema: Listas
 Dificultad: Media
-Enunciado: �Qu� m�todo cuenta las ocurrencias de un elemento en una lista?
+Enunciado: ¿Qué método cuenta las ocurrencias de un elemento en una lista?
 
 Opciones:
 A) count()
@@ -382,7 +382,7 @@ PREGUNTA #24
 ID: 24
 Tema: Comparaciones
 Dificultad: Media
-Enunciado: �Cu�l es la salida de 5 == 5.0?
+Enunciado: ¿Cuál es la salida de 5 == 5.0?
 
 Opciones:
 A) True
@@ -396,9 +396,9 @@ Respuesta Correcta: A
 PREGUNTA #25
 --------------------------------------------------------------------------------
 ID: 25
-Tema: Programaci�n Orientada a Objetos
-Dificultad: F�cil
-Enunciado: �Qu� palabra clave se usa para crear una clase?
+Tema: Programación Orientada a Objetos
+Dificultad: Fácil
+Enunciado: ¿Qué palabra clave se usa para crear una clase?
 
 Opciones:
 A) class
@@ -412,9 +412,9 @@ Respuesta Correcta: A
 PREGUNTA #26
 --------------------------------------------------------------------------------
 ID: 26
-Tema: Operadores Aritm�ticos
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de print(2 * 3 + 4)?
+Tema: Operadores Aritméticos
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de print(2 * 3 + 4)?
 
 Opciones:
 A) 10
@@ -428,9 +428,9 @@ Respuesta Correcta: A
 PREGUNTA #27
 --------------------------------------------------------------------------------
 ID: 27
-Tema: Sintaxis B�sica
-Dificultad: F�cil
-Enunciado: �C�mo se comenta una l�nea en Python?
+Tema: Sintaxis Básica
+Dificultad: Fácil
+Enunciado: ¿Cómo se comenta una línea en Python?
 
 Opciones:
 A) //
@@ -446,7 +446,7 @@ PREGUNTA #28
 ID: 28
 Tema: Listas
 Dificultad: Media
-Enunciado: �Qu� m�todo ordena una lista?
+Enunciado: ¿Qué método ordena una lista?
 
 Opciones:
 A) sort()
@@ -462,7 +462,7 @@ PREGUNTA #29
 ID: 29
 Tema: Tipos de Datos
 Dificultad: Media
-Enunciado: �Cu�l es la salida de bool('')?
+Enunciado: ¿Cuál es la salida de bool('')?
 
 Opciones:
 A) True
@@ -477,8 +477,8 @@ PREGUNTA #30
 --------------------------------------------------------------------------------
 ID: 30
 Tema: Funciones Built-in
-Dificultad: F�cil
-Enunciado: �Qu� funci�n devuelve el valor absoluto de un n�mero?
+Dificultad: Fácil
+Enunciado: ¿Qué función devuelve el valor absoluto de un número?
 
 Opciones:
 A) abs()
@@ -493,8 +493,8 @@ PREGUNTA #31
 --------------------------------------------------------------------------------
 ID: 31
 Tema: Strings
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de len('Python')?
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de len('Python')?
 
 Opciones:
 A) 5
@@ -509,8 +509,8 @@ PREGUNTA #32
 --------------------------------------------------------------------------------
 ID: 32
 Tema: Variables
-Dificultad: F�cil
-Enunciado: �C�mo se declara una variable en Python?
+Dificultad: Fácil
+Enunciado: ¿Cómo se declara una variable en Python?
 
 Opciones:
 A) var x = 5
@@ -525,8 +525,8 @@ PREGUNTA #33
 --------------------------------------------------------------------------------
 ID: 33
 Tema: Funciones Built-in
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de max([1,5,3])?
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de max([1,5,3])?
 
 Opciones:
 A) 1
@@ -542,7 +542,7 @@ PREGUNTA #34
 ID: 34
 Tema: Listas
 Dificultad: Media
-Enunciado: �Qu� m�todo elimina un elemento por su valor?
+Enunciado: ¿Qué método elimina un elemento por su valor?
 
 Opciones:
 A) remove()
@@ -556,9 +556,9 @@ Respuesta Correcta: A
 PREGUNTA #35
 --------------------------------------------------------------------------------
 ID: 35
-Tema: Operadores Aritm�ticos
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de print(2 ** 3)?
+Tema: Operadores Aritméticos
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de print(2 ** 3)?
 
 Opciones:
 A) 6
@@ -573,8 +573,8 @@ PREGUNTA #36
 --------------------------------------------------------------------------------
 ID: 36
 Tema: Funciones Built-in
-Dificultad: F�cil
-Enunciado: �Qu� funci�n devuelve el n�mero de elementos de un objeto?
+Dificultad: Fácil
+Enunciado: ¿Qué función devuelve el número de elementos de un objeto?
 
 Opciones:
 A) len()
@@ -590,7 +590,7 @@ PREGUNTA #37
 ID: 37
 Tema: Tipos de Datos
 Dificultad: Media
-Enunciado: �Cu�l es la salida de bool([1,2,3])?
+Enunciado: ¿Cuál es la salida de bool([1,2,3])?
 
 Opciones:
 A) True
@@ -606,11 +606,11 @@ PREGUNTA #38
 ID: 38
 Tema: Listas
 Dificultad: Media
-Enunciado: �C�mo se accede al �ltimo elemento de una lista?
+Enunciado: ¿Cómo se accede al último elemento de una lista?
 
 Opciones:
 A) lista[-1]
-B) lista[�ltimo]
+B) lista[último]
 C) lista[-2]
 D) lista[0]
 
@@ -620,9 +620,9 @@ Respuesta Correcta: A
 PREGUNTA #39
 --------------------------------------------------------------------------------
 ID: 39
-Tema: Operadores de Comparaci�n
-Dificultad: F�cil
-Enunciado: �Qu� operador se usa para comparar si dos valores son iguales?
+Tema: Operadores de Comparación
+Dificultad: Fácil
+Enunciado: ¿Qué operador se usa para comparar si dos valores son iguales?
 
 Opciones:
 A) =
@@ -638,7 +638,7 @@ PREGUNTA #40
 ID: 40
 Tema: Strings
 Dificultad: Media
-Enunciado: �Cu�l es la salida de 'Python'[::-1]?
+Enunciado: ¿Cuál es la salida de 'Python'[::-1]?
 
 Opciones:
 A) 'nohtyP'
@@ -652,9 +652,9 @@ Respuesta Correcta: A
 PREGUNTA #41
 --------------------------------------------------------------------------------
 ID: 41
-Tema: Conversi�n de Tipos
-Dificultad: F�cil
-Enunciado: �Qu� funci�n convierte un n�mero a string?
+Tema: Conversión de Tipos
+Dificultad: Fácil
+Enunciado: ¿Qué función convierte un número a string?
 
 Opciones:
 A) str()
@@ -668,9 +668,9 @@ Respuesta Correcta: A
 PREGUNTA #42
 --------------------------------------------------------------------------------
 ID: 42
-Tema: Operadores Aritm�ticos
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de 7 // 3?
+Tema: Operadores Aritméticos
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de 7 // 3?
 
 Opciones:
 A) 2
@@ -685,8 +685,8 @@ PREGUNTA #43
 --------------------------------------------------------------------------------
 ID: 43
 Tema: Tuplas
-Dificultad: F�cil
-Enunciado: �C�mo se crea una tupla?
+Dificultad: Fácil
+Enunciado: ¿Cómo se crea una tupla?
 
 Opciones:
 A) (1,2,3)
@@ -702,7 +702,7 @@ PREGUNTA #44
 ID: 44
 Tema: Listas
 Dificultad: Media
-Enunciado: �Qu� m�todo agrega todos los elementos de una lista a otra?
+Enunciado: ¿Qué método agrega todos los elementos de una lista a otra?
 
 Opciones:
 A) extend()
@@ -717,8 +717,8 @@ PREGUNTA #45
 --------------------------------------------------------------------------------
 ID: 45
 Tema: Funciones Built-in
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de sum([1,2,3])?
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de sum([1,2,3])?
 
 Opciones:
 A) 5
@@ -733,8 +733,8 @@ PREGUNTA #46
 --------------------------------------------------------------------------------
 ID: 46
 Tema: Bucles
-Dificultad: F�cil
-Enunciado: �Qu� palabra clave se usa para salir de un bucle?
+Dificultad: Fácil
+Enunciado: ¿Qué palabra clave se usa para salir de un bucle?
 
 Opciones:
 A) exit
@@ -750,7 +750,7 @@ PREGUNTA #47
 ID: 47
 Tema: Strings
 Dificultad: Media
-Enunciado: �Cu�l es la salida de 'Python'[1:4]?
+Enunciado: ¿Cuál es la salida de 'Python'[1:4]?
 
 Opciones:
 A) yth
@@ -765,8 +765,8 @@ PREGUNTA #48
 --------------------------------------------------------------------------------
 ID: 48
 Tema: Operadores de Pertenencia
-Dificultad: F�cil
-Enunciado: �Qu� operador verifica si un elemento est� en una lista?
+Dificultad: Fácil
+Enunciado: ¿Qué operador verifica si un elemento está en una lista?
 
 Opciones:
 A) in
@@ -781,8 +781,8 @@ PREGUNTA #49
 --------------------------------------------------------------------------------
 ID: 49
 Tema: Funciones Built-in
-Dificultad: F�cil
-Enunciado: �Cu�l es la salida de print(round(3.7))?
+Dificultad: Fácil
+Enunciado: ¿Cuál es la salida de print(round(3.7))?
 
 Opciones:
 A) 3
@@ -796,9 +796,9 @@ Respuesta Correcta: B
 PREGUNTA #50
 --------------------------------------------------------------------------------
 ID: 50
-Tema: Conversi�n de Tipos
+Tema: Conversión de Tipos
 Dificultad: Media
-Enunciado: �Qu� m�todo convierte un string a lista de caracteres?
+Enunciado: ¿Qué método convierte un string a lista de caracteres?
 
 Opciones:
 A) list()
@@ -810,16 +810,16 @@ Respuesta Correcta: A
 --------------------------------------------------------------------------------
 
 ================================================================================
-                              ESTAD�STICAS
+                              ESTADÍSTICAS
 ================================================================================
 Total de preguntas: 50
 Por dificultad:
-  - F�cil: 30 preguntas
+  - Fácil: 30 preguntas
   - Media: 20 preguntas
-  - Dif�cil: 0 preguntas
+  - Difícil: 0 preguntas
 
 Por tema:
-  - Operadores Aritm�ticos: 6
+  - Operadores Aritméticos: 6
   - Funciones Built-in: 6
   - Listas: 8
   - Strings: 6
@@ -830,12 +830,12 @@ Por tema:
   - Entrada/Salida: 1
   - Operadores de Identidad: 1
   - Manejo de Errores: 1
-  - Conversi�n de Tipos: 3
+  - Conversión de Tipos: 3
   - Comparaciones: 1
-  - Programaci�n Orientada a Objetos: 1
-  - Sintaxis B�sica: 1
+  - Programación Orientada a Objetos: 1
+  - Sintaxis Básica: 1
   - Variables: 1
-  - Operadores de Comparaci�n: 1
+  - Operadores de Comparación: 1
   - Tuplas: 1
   - Operadores de Pertenencia: 1
 ================================================================================

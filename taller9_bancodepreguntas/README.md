@@ -37,3 +37,12 @@ Jacome Garcia Emerson
 ![txt](image.png)
 ![csv](image-1.png)
 ![json](image-2.png)
+
+## 💾 Guardado en Base de Datos
+- ✅ 50 preguntas guardadas en SQLite
+- ✅ Exportación a TXT desde BD
+- ✅ Exportación a CSV desde BD
+- ✅ Exportación a JSON desde BD
+
+![cargar a la base de datos](image-3.png)
+![archivos exportados](image-4.png)

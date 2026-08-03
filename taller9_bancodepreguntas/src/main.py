@@ -225,7 +225,10 @@ while True:
         )
 
 
-        simulador.generar_reporte()
+        simulador.reporte_txt()
+        simulador.reporte_csv()
+        simulador.reporte_json()
+        
 
     # ------------------------
     # SALIR

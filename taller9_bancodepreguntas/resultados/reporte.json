@@ -1,14 +1,21 @@
 {
+    "fecha_simulacion": "2026-08-03 11:42:59.640538",
     "total_preguntas": 1,
+    "puntaje": 0,
     "respuestas_correctas": 0,
     "respuestas_incorrectas": 1,
-    "porcentaje": 0.0,
-    "detalle": [
+    "preguntas": [
         {
-            "pregunta": "¿Qué método cuenta las ocurrencias de un elemento en una lista?",
-            "respuesta_usuario": "B",
+            "pregunta": "¿Cuál es la salida de 'Python'[::-1]?",
+            "respuesta_usuario": "D",
             "respuesta_correcta": "A",
             "resultado": false
         }
-    ]
+    ],
+    "estadisticas_tema": {
+        "Sin tema": 1
+    },
+    "estadisticas_dificultad": {
+        "Sin dificultad": 1
+    }
 }

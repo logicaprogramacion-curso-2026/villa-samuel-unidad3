@@ -54,3 +54,12 @@ Jacome Garcia Emerson
 - ✅ Cálculo de puntaje
 
 ![](image-5.png)
+
+
+## 📊 Generación de Reportes
+- ✅ Reporte TXT generado
+- ✅ Reporte CSV generado
+- ✅ Reporte JSON generado
+![estadisticas.csv](image-6.png)
+![reporte.json](image-7.png)
+![respuestas.txt](image-8.png)

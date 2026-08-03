@@ -1,0 +1,18 @@
+===== REPORTE DE SIMULACIÓN =====
+
+Fecha y hora: 2026-08-03 11:42:59.640538
+Puntaje obtenido: 0/1
+
+PREGUNTAS Y RESPUESTAS:
+
+Pregunta: ¿Cuál es la salida de 'Python'[::-1]?
+Respuesta usuario: D
+Respuesta correcta: A
+Resultado: False
+----------------------------
+
+Estadísticas por tema:
+{'Sin tema': 1}
+
+Estadísticas por dificultad:
+{'Sin dificultad': 1}

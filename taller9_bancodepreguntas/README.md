@@ -46,3 +46,11 @@ Jacome Garcia Emerson
 
 ![cargar a la base de datos](image-3.png)
 ![archivos exportados](image-4.png)
+
+## 🎮 Simulador de Evaluación
+- ✅ Selección aleatoria de preguntas
+- ✅ Interacción con usuario
+- ✅ Validación de respuestas
+- ✅ Cálculo de puntaje
+
+![](image-5.png)

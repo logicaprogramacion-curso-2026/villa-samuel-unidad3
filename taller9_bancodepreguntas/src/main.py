@@ -1,6 +1,7 @@
 from database import Database
 from dao import preguntaDAO
 from gestor import Gestor
+from simulador import Simulador
 import os
 
 
@@ -39,7 +40,8 @@ def menu_principal():
     print("2. Guardar en Base de Datos")
     print("3. Exportar preguntas")
     print("4. Ver estadísticas")
-    print("5. Salir")
+    print("5. Iniciar simulación")
+    print("6. Salir")
     print("=" * 45)
 
 
@@ -193,12 +195,43 @@ while True:
 
         else:
             print("Opción inválida.")
+            
+            
+    # ------------------------
+    # SIMULACIÓN
+    # ------------------------
+
+    elif opcion == "5":
+
+        if not gestor.preguntas:
+            print("Primero debe cargar preguntas.")
+            continue
+
+
+        cantidad = int(
+            input(
+                "\nCantidad de preguntas a responder: "
+            )
+        )
+
+
+        simulador = Simulador(
+            gestor.preguntas
+        )
+
+
+        simulador.iniciar_simulacion(
+            cantidad
+        )
+
+
+        simulador.generar_reporte()
 
     # ------------------------
     # SALIR
     # ------------------------
 
-    elif opcion == "5":
+    elif opcion == "6":
 
         db.cerrar()
 

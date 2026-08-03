@@ -1,14 +1,14 @@
 {
-    "fecha_simulacion": "2026-08-03 11:42:59.640538",
+    "fecha_simulacion": "2026-08-03 12:05:56.835262",
     "total_preguntas": 1,
     "puntaje": 0,
     "respuestas_correctas": 0,
     "respuestas_incorrectas": 1,
     "preguntas": [
         {
-            "pregunta": "¿Cuál es la salida de 'Python'[::-1]?",
-            "respuesta_usuario": "D",
-            "respuesta_correcta": "A",
+            "pregunta": "¿Qué función lee entrada del usuario?",
+            "respuesta_usuario": "A",
+            "respuesta_correcta": "B",
             "resultado": false
         }
     ],

@@ -49,3 +49,4 @@
 48,¿Qué operador verifica si un elemento está en una lista?,in,has,contains,inside,A,Fácil,Operadores de Pertenencia
 49,¿Cuál es la salida de print(round(3.7))?,3,4,3.5,4.0,B,Fácil,Funciones Built-in
 50,¿Qué método convierte un string a lista de caracteres?,list(),split(),char(),toList(),A,Media,Conversión de Tipos
+51,Capital de Ecuador,Quito,Lima,Bogotá,Caracas,A,Fácil,Geografía

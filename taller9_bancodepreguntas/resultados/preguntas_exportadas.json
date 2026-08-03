@@ -648,5 +648,18 @@
         "respuesta_correcta": "A",
         "dificultad": "Media",
         "tema": "Conversión de Tipos"
+    },
+    {
+        "id": 51,
+        "pregunta": "Capital de Ecuador",
+        "opciones": {
+            "A": "Quito",
+            "B": "Lima",
+            "C": "Bogotá",
+            "D": "Caracas"
+        },
+        "respuesta_correcta": "A",
+        "dificultad": "Fácil",
+        "tema": "Geografía"
     }
 ]

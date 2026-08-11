@@ -1,0 +1,47 @@
+{
+    "fecha": "2026-08-11T11:19:12.586434",
+    "docente": "elver",
+    "materia": "galarga",
+    "actividades": [
+        "El docente realizó una actividad práctica utilizando recursos digitales para explicar el tema. Los estudiantes participaron activamente, resolvieron ejercicios y recibieron retroalimentación. La actividad permitió aplicar los conocimientos adquiridos y fomentar la autonomía del estudiante."
+    ],
+    "resultados": {
+        "resumen_general": {
+            "cantidad_actividades": 1,
+            "analisis": "La actividad práctica realizada por el docente utilizando recursos digitales permitió aplicar los conocimientos adquiridos y fomentar la autonomía del estudiante.",
+            "opinion_ia": "En general, la práctica docente parece estar enfocada en la aplicación de conocimientos y la autonomía del estudiante, lo que es positivo. Sin embargo, sería recomendable planificar una actividad alternativa para mantener el proceso de aprendizaje y evaluar el logro de los estudiantes.",
+            "fortalezas": [],
+            "problemas_detectados": [
+                "La ausencia de una evaluación formativa y sumativa"
+            ],
+            "aspectos_mejorar": []
+        },
+        "recursos_digitales": {
+            "nivel": 2,
+            "justificacion": "Se utilizó un recurso digital para explicar el tema, lo que es positivo.",
+            "opinion": "Aunque se utilizó un recurso digital, sería recomendable variar los recursos y herramientas para mantener la interés del estudiante.",
+            "evidencia": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "sugerencia": "Planificar una actividad práctica relacionada con el tema utilizando diferentes recursos digitales."
+        },
+        "evaluacion": {
+            "nivel": 1,
+            "justificacion": "No se proporcionó evidencia de evaluación formativa o sumativa.",
+            "opinion": "La ausencia de evaluación formativa y sumativa es un problema, ya que no permite evaluar el logro de los estudiantes.",
+            "evidencia": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "sugerencia": "Establecer un objetivo de aprendizaje y planificar una evaluación formativa y sumativa."
+        },
+        "empoderamiento": {
+            "nivel": 2,
+            "justificacion": "Se fomentó la autonomía del estudiante, lo que es positivo.",
+            "opinion": "Aunque se fomentó la autonomía, sería recomendable proporcionar retroalimentación y apoyo adicional para ayudar a los estudiantes a alcanzar sus objetivos.",
+            "evidencia": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "sugerencia": "Proporcionar retroalimentación y apoyo adicional para ayudar a los estudiantes a alcanzar sus objetivos."
+        },
+        "valoracion_global": {
+            "nivel": 2,
+            "opinion": "En general, la práctica docente parece estar enfocada en la aplicación de conocimientos y la autonomía del estudiante. Sin embargo, sería recomendable planificar una actividad alternativa para mantener el proceso de aprendizaje y evaluar el logro de los estudiantes.",
+            "justificacion": "",
+            "sugerencia": ""
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "fecha": "2026-08-11T11:16:35.477873",
+    "docente": "elver",
+    "materia": "galarga",
+    "actividades": [
+        "se murio y no dio clase"
+    ],
+    "resultados": {
+        "resumen_general": {
+            "cantidad_actividades": 1,
+            "analisis": "La actividad descrita es insuficiente y no proporciona evidencia de una experiencia de aprendizaje.",
+            "opinion_ia": "Desde una perspectiva pedagógica, sería recomendable planificar una actividad alternativa que permita mantener el proceso de aprendizaje y posteriormente evaluar el logro de los estudiantes.",
+            "fortalezas": [],
+            "problemas_detectados": [
+                "Ausencia de una experiencia de aprendizaje"
+            ],
+            "aspectos_mejorar": []
+        },
+        "recursos_digitales": {
+            "nivel": 1,
+            "justificacion": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "opinion": "No se utilizó ninguna herramienta digital.",
+            "evidencia": "NO SE PROPORCIONÓ INFORMACIÓN SUFICIENTE.",
+            "sugerencia": "Planificar una actividad práctica relacionada con el tema y establecer un objetivo de aprendizaje."
+        },
+        "evaluacion": {
+            "nivel": 1,
+            "justificacion": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "opinion": "No se utilizó ningún método de evaluación.",
+            "evidencia": "NO SE PROPORCIONÓ INFORMACIÓN SUFICIENTE.",
+            "sugerencia": "Establecer un mecanismo de evaluación y proporcionar retroalimentación."
+        },
+        "empoderamiento": {
+            "nivel": 1,
+            "justificacion": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "opinion": "No se fomentó la participación ni la autonomía del estudiante.",
+            "evidencia": "NO SE PROPORCIONÓ INFORMACIÓN SUFICIENTE.",
+            "sugerencia": "Fomentar la participación y la autonomía del estudiante a través de actividades colaborativas."
+        },
+        "valoracion_global": {
+            "nivel": 1,
+            "opinion": "La práctica docente descrita no parece tener un impacto positivo en el aprendizaje.",
+            "justificacion": "",
+            "sugerencia": ""
+        }
+    }
+}

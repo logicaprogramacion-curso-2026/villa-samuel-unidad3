@@ -1,0 +1,38 @@
+{
+    "fecha": "2026-08-11T11:13:34.263022",
+    "docente": "elver",
+    "materia": "galarga",
+    "actividades": [
+        "se murio y no dio clase"
+    ],
+    "resultados": {
+        "resumen_general": {
+            "cantidad_actividades": 1,
+            "analisis": "NO EVIDENCIADO EN LAS ACTIVIDADES",
+            "fortalezas": [],
+            "aspectos_mejorar": []
+        },
+        "recursos_digitales": {
+            "nivel": 1,
+            "justificacion": "",
+            "sugerencia": "",
+            "evidencia": ""
+        },
+        "evaluacion": {
+            "nivel": 1,
+            "justificacion": "",
+            "sugerencia": "",
+            "evidencia": ""
+        },
+        "empoderamiento": {
+            "nivel": 1,
+            "justificacion": "",
+            "sugerencia": "",
+            "evidencia": ""
+        },
+        "valoracion_global": {
+            "nivel": 1,
+            "justificacion": ""
+        }
+    }
+}

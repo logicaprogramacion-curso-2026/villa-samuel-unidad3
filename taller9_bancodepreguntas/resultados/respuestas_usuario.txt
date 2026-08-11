@@ -1,18 +1,24 @@
 ===== REPORTE DE SIMULACIÓN =====
 
-Fecha y hora: 2026-08-03 12:05:56.835262
-Puntaje obtenido: 0/1
+Fecha y hora: 2026-08-11 11:31:27.855682
+Puntaje obtenido: 1/2
 
 PREGUNTAS Y RESPUESTAS:
 
-Pregunta: ¿Qué función lee entrada del usuario?
-Respuesta usuario: A
+Pregunta: ¿Qué método elimina el último elemento de una lista?
+Respuesta usuario: B
+Respuesta correcta: B
+Resultado: True
+----------------------------
+
+Pregunta: ¿Cuál es la salida de len('Python')?
+Respuesta usuario: C
 Respuesta correcta: B
 Resultado: False
 ----------------------------
 
 Estadísticas por tema:
-{'Sin tema': 1}
+{'Sin tema': 2}
 
 Estadísticas por dificultad:
-{'Sin dificultad': 1}
+{'Sin dificultad': 2}

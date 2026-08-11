@@ -1,21 +1,27 @@
 {
-    "fecha_simulacion": "2026-08-03 12:05:56.835262",
-    "total_preguntas": 1,
-    "puntaje": 0,
-    "respuestas_correctas": 0,
+    "fecha_simulacion": "2026-08-11 11:31:27.855682",
+    "total_preguntas": 2,
+    "puntaje": 1,
+    "respuestas_correctas": 1,
     "respuestas_incorrectas": 1,
     "preguntas": [
         {
-            "pregunta": "¿Qué función lee entrada del usuario?",
-            "respuesta_usuario": "A",
+            "pregunta": "¿Qué método elimina el último elemento de una lista?",
+            "respuesta_usuario": "B",
+            "respuesta_correcta": "B",
+            "resultado": true
+        },
+        {
+            "pregunta": "¿Cuál es la salida de len('Python')?",
+            "respuesta_usuario": "C",
             "respuesta_correcta": "B",
             "resultado": false
         }
     ],
     "estadisticas_tema": {
-        "Sin tema": 1
+        "Sin tema": 2
     },
     "estadisticas_dificultad": {
-        "Sin dificultad": 1
+        "Sin dificultad": 2
     }
 }

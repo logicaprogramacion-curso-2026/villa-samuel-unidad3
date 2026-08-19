@@ -1,5 +1,6 @@
 # datos.py
 
+# Catálogo utilizando una tupla
 CATALOGO = (
     ("P001", "Arroz"),
     ("P002", "Azúcar"),
@@ -8,6 +9,7 @@ CATALOGO = (
     ("P005", "Pan"),
 )
 
+# Diccionario de precios
 PRECIOS = {
     "P001": 1.25,
     "P002": 1.10,
@@ -16,6 +18,7 @@ PRECIOS = {
     "P005": 0.50,
 }
 
+# Diccionario de stock
 STOCK = {
     "P001": 30,
     "P002": 25,
@@ -54,13 +57,13 @@ def agregar_producto(
     """
     Agrega un nuevo producto al catálogo.
 
-    Como las tuplas son inmutables,
-    se crea una nueva tupla.
+    Reto A.
     """
 
     global CATALOGO
 
     if producto_existe(producto_id):
+
         return False
 
     nuevo_producto = (

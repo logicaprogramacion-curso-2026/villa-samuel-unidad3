@@ -12,29 +12,44 @@ ARCHIVO_CSV = "ventas.csv"
 
 def cargar_dataframe():
     """
-    Carga las ventas desde ventas.csv.
+    Carga ventas.csv en un DataFrame.
     """
 
-    if not os.path.exists(ARCHIVO_CSV):
+    if not os.path.exists(
+        ARCHIVO_CSV
+    ):
+
         return pd.DataFrame()
 
     try:
-        df = pd.read_csv(ARCHIVO_CSV)
+
+        df = pd.read_csv(
+            ARCHIVO_CSV
+        )
 
     except Exception:
+
         return pd.DataFrame()
 
-    return df
+    else:
+
+        return df
+
+    finally:
+
+        pass
 
 
 def ingresos_por_producto():
     """
-    Agrupa los ingresos por producto usando Pandas.
+    Calcula los ingresos agrupados
+    por producto usando Pandas.
     """
 
     df = cargar_dataframe()
 
     if df.empty:
+
         return pd.DataFrame()
 
     resultado = (
@@ -48,12 +63,18 @@ def ingresos_por_producto():
 
 def calcular_metricas():
     """
-    Calcula estadísticas utilizando NumPy.
+    Calcula:
+    - media
+    - desviación estándar
+    - suma
+
+    utilizando NumPy.
     """
 
     df = cargar_dataframe()
 
     if df.empty:
+
         return {
             "media": 0,
             "desviacion": 0,
@@ -65,11 +86,17 @@ def calcular_metricas():
         dtype=float
     )
 
-    media = np.mean(valores)
+    media = np.mean(
+        valores
+    )
 
-    desviacion = np.std(valores)
+    desviacion = np.std(
+        valores
+    )
 
-    suma = np.sum(valores)
+    suma = np.sum(
+        valores
+    )
 
     return {
         "media": media,
@@ -81,15 +108,18 @@ def calcular_metricas():
 def generar_grafico():
     """
     Muestra una gráfica de barras
-    con los ingresos por producto.
+    de ingresos por producto.
     """
 
     datos = ingresos_por_producto()
 
     if datos.empty:
+
         return False
 
-    plt.figure(figsize=(8, 5))
+    plt.figure(
+        figsize=(8, 5)
+    )
 
     plt.bar(
         datos["producto"],
@@ -121,15 +151,20 @@ def generar_grafico():
 
 def exportar_grafico():
     """
-    Guarda la gráfica como ingresos.png.
+    Exporta la gráfica como ingresos.png.
+
+    Reto B.
     """
 
     datos = ingresos_por_producto()
 
     if datos.empty:
+
         return False
 
-    plt.figure(figsize=(8, 5))
+    plt.figure(
+        figsize=(8, 5)
+    )
 
     plt.bar(
         datos["producto"],

@@ -13,13 +13,16 @@ from datos import (
 
 def calcular_descuento(unidades, subtotal):
     """
-    Calcula un descuento del 5% cuando
+    Aplica 5% de descuento cuando
     se compran 10 unidades o más.
     """
 
     if unidades >= 10:
+
         descuento = subtotal * 0.05
+
     else:
+
         descuento = 0
 
     return descuento
@@ -27,10 +30,7 @@ def calcular_descuento(unidades, subtotal):
 
 def registrar_venta(producto_id, unidades):
     """
-    Registra una venta validando:
-    - Producto existente
-    - Cantidad válida
-    - Stock disponible
+    Registra una venta individual.
     """
 
     if not producto_existe(producto_id):
@@ -79,10 +79,10 @@ def generar_ventas_prueba(cantidad=10):
     Genera ventas de prueba.
 
     Utiliza:
-    - for
-    - if
-    - break
-    - continue
+    for
+    if
+    continue
+    break
     """
 
     ventas_generadas = []
@@ -91,8 +91,8 @@ def generar_ventas_prueba(cantidad=10):
 
     for i in range(cantidad):
 
-        # Control con break
         if i >= 20:
+
             break
 
         producto_id = random.choice(
@@ -109,9 +109,8 @@ def generar_ventas_prueba(cantidad=10):
             unidades
         )
 
-        # Si la venta falla,
-        # continuamos con la siguiente.
         if venta is None:
+
             continue
 
         ventas_generadas.append(

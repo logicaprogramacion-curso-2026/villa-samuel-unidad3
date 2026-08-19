@@ -9,7 +9,7 @@ def main():
 
     ventana = tk.Tk()
 
-    app = MiniTiendaApp(ventana)
+    MiniTiendaApp(ventana)
 
     ventana.mainloop()
 

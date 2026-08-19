@@ -15,8 +15,7 @@ from ventas import (
 
 from archivos import (
     guardar_venta_csv,
-    registrar_log,
-    cargar_ventas_csv
+    registrar_log
 )
 
 from analisis import (
@@ -25,6 +24,7 @@ from analisis import (
     generar_grafico,
     exportar_grafico
 )
+
 
 class MiniTiendaApp:
 
@@ -45,11 +45,14 @@ class MiniTiendaApp:
             False
         )
 
+        # Lista utilizada como carrito
+        self.carrito = []
+
         self.crear_interfaz()
 
-    # --------------------------------------------------
+    # ==================================================
     # INTERFAZ PRINCIPAL
-    # --------------------------------------------------
+    # ==================================================
 
     def crear_interfaz(self):
 
@@ -71,9 +74,9 @@ class MiniTiendaApp:
 
         subtitulo.pack()
 
-        # -------------------------------
+        # ----------------------------------------------
         # MENÚ
-        # -------------------------------
+        # ----------------------------------------------
 
         menu_frame = tk.LabelFrame(
             self.ventana,
@@ -89,15 +92,42 @@ class MiniTiendaApp:
         )
 
         botones = [
-            ("1. Registrar venta", self.mostrar_registro),
-            ("2. Ver catálogo", self.actualizar_catalogo),
-            ("3. Ver ventas", self.mostrar_ventas),
-            ("4. Ver estadísticas", self.mostrar_metricas),
-            ("5. Ver gráfico", self.mostrar_grafico),
-            ("6. Exportar gráfico", self.exportar_png),
-            ("7. Agregar producto", self.mostrar_agregar_producto),
-            ("8. Generar 10 ventas", self.generar_ventas),
-            ("9. Salir", self.ventana.destroy)
+            (
+                "1. Registrar compra",
+                self.mostrar_registro
+            ),
+            (
+                "2. Ver catálogo",
+                self.actualizar_catalogo
+            ),
+            (
+                "3. Ver ventas",
+                self.mostrar_ventas
+            ),
+            (
+                "4. Ver estadísticas",
+                self.mostrar_metricas
+            ),
+            (
+                "5. Ver gráfico",
+                self.mostrar_grafico
+            ),
+            (
+                "6. Exportar gráfico",
+                self.exportar_png
+            ),
+            (
+                "7. Agregar producto",
+                self.mostrar_agregar_producto
+            ),
+            (
+                "8. Generar 10 ventas",
+                self.generar_ventas
+            ),
+            (
+                "9. Salir",
+                self.ventana.destroy
+            )
         ]
 
         for indice, (
@@ -120,9 +150,9 @@ class MiniTiendaApp:
                 pady=5
             )
 
-        # -------------------------------
-        # ÁREA DE CONTENIDO
-        # -------------------------------
+        # ----------------------------------------------
+        # CONTENIDO
+        # ----------------------------------------------
 
         self.contenido = tk.Frame(
             self.ventana
@@ -137,26 +167,31 @@ class MiniTiendaApp:
 
         self.actualizar_catalogo()
 
-    # --------------------------------------------------
+    # ==================================================
     # LIMPIAR CONTENIDO
-    # --------------------------------------------------
+    # ==================================================
 
     def limpiar_contenido(self):
 
-        for widget in self.contenido.winfo_children():
+        for widget in (
+            self.contenido.winfo_children()
+        ):
+
             widget.destroy()
 
-    # --------------------------------------------------
-    # OPCIÓN 1
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 1: REGISTRAR COMPRA
+    # ==================================================
 
     def mostrar_registro(self):
 
         self.limpiar_contenido()
 
+        self.carrito = []
+
         titulo = tk.Label(
             self.contenido,
-            text="Registrar venta",
+            text="Registrar compra",
             font=("Arial", 18, "bold")
         )
 
@@ -164,16 +199,25 @@ class MiniTiendaApp:
             pady=10
         )
 
-        frame = tk.Frame(
-            self.contenido
+        # ----------------------------------------------
+        # ENTRADA
+        # ----------------------------------------------
+
+        frame_entrada = tk.LabelFrame(
+            self.contenido,
+            text="Agregar producto a la compra",
+            padx=15,
+            pady=15
         )
 
-        frame.pack(
-            pady=20
+        frame_entrada.pack(
+            padx=20,
+            pady=10,
+            fill="x"
         )
 
         tk.Label(
-            frame,
+            frame_entrada,
             text="Producto:"
         ).grid(
             row=0,
@@ -183,14 +227,13 @@ class MiniTiendaApp:
         )
 
         self.producto_combo = ttk.Combobox(
-            frame,
+            frame_entrada,
             state="readonly",
             width=30
         )
 
         productos = []
 
-        # FOR
         for producto_id, nombre in datos.CATALOGO:
 
             productos.append(
@@ -207,7 +250,7 @@ class MiniTiendaApp:
         )
 
         tk.Label(
-            frame,
+            frame_entrada,
             text="Unidades:"
         ).grid(
             row=1,
@@ -217,7 +260,7 @@ class MiniTiendaApp:
         )
 
         self.unidades_entry = tk.Entry(
-            frame,
+            frame_entrada,
             width=20
         )
 
@@ -229,26 +272,168 @@ class MiniTiendaApp:
         )
 
         tk.Button(
-            frame,
-            text="Registrar",
+            frame_entrada,
+            text="Agregar al carrito",
             width=20,
-            command=self.registrar
+            command=self.agregar_al_carrito
         ).grid(
             row=2,
             column=0,
             columnspan=2,
-            pady=15
+            pady=10
         )
 
-    # --------------------------------------------------
-    # REGISTRAR VENTA
-    # --------------------------------------------------
+        # ----------------------------------------------
+        # CARRITO
+        # ----------------------------------------------
 
-    def registrar(self):
+        frame_carrito = tk.LabelFrame(
+            self.contenido,
+            text="Productos de la compra",
+            padx=10,
+            pady=10
+        )
+
+        frame_carrito.pack(
+            padx=20,
+            pady=10,
+            fill="both",
+            expand=True
+        )
+
+        columnas = (
+            "id",
+            "producto",
+            "cantidad",
+            "precio",
+            "subtotal"
+        )
+
+        self.tabla_carrito = ttk.Treeview(
+            frame_carrito,
+            columns=columnas,
+            show="headings",
+            height=8
+        )
+
+        self.tabla_carrito.heading(
+            "id",
+            text="ID"
+        )
+
+        self.tabla_carrito.heading(
+            "producto",
+            text="Producto"
+        )
+
+        self.tabla_carrito.heading(
+            "cantidad",
+            text="Cantidad"
+        )
+
+        self.tabla_carrito.heading(
+            "precio",
+            text="Precio"
+        )
+
+        self.tabla_carrito.heading(
+            "subtotal",
+            text="Subtotal"
+        )
+
+        self.tabla_carrito.column(
+            "id",
+            width=80
+        )
+
+        self.tabla_carrito.column(
+            "producto",
+            width=180
+        )
+
+        self.tabla_carrito.column(
+            "cantidad",
+            width=100
+        )
+
+        self.tabla_carrito.column(
+            "precio",
+            width=100
+        )
+
+        self.tabla_carrito.column(
+            "subtotal",
+            width=120
+        )
+
+        self.tabla_carrito.pack(
+            fill="both",
+            expand=True
+        )
+
+        # ----------------------------------------------
+        # BOTONES
+        # ----------------------------------------------
+
+        botones = tk.Frame(
+            self.contenido
+        )
+
+        botones.pack(
+            pady=10
+        )
+
+        tk.Button(
+            botones,
+            text="Quitar seleccionado",
+            width=20,
+            command=self.quitar_del_carrito
+        ).pack(
+            side="left",
+            padx=5
+        )
+
+        tk.Button(
+            botones,
+            text="Vaciar carrito",
+            width=20,
+            command=self.vaciar_carrito
+        ).pack(
+            side="left",
+            padx=5
+        )
+
+        tk.Button(
+            botones,
+            text="Registrar compra",
+            width=20,
+            command=self.registrar_compra
+        ).pack(
+            side="left",
+            padx=5
+        )
+
+        self.label_total = tk.Label(
+            self.contenido,
+            text="Total: $0.00",
+            font=("Arial", 14, "bold")
+        )
+
+        self.label_total.pack(
+            pady=5
+        )
+
+    # ==================================================
+    # AGREGAR AL CARRITO
+    # ==================================================
+
+    def agregar_al_carrito(self):
 
         try:
 
-            seleccion = self.producto_combo.get()
+            seleccion = (
+                self.producto_combo.get()
+            )
 
             if not seleccion:
 
@@ -260,9 +445,252 @@ class MiniTiendaApp:
                 self.unidades_entry.get()
             )
 
+            if unidades <= 0:
+
+                raise ValueError(
+                    "Las unidades deben ser mayores que cero."
+                )
+
             producto_id = (
                 seleccion.split(" - ")[0]
             )
+
+            nombre = datos.obtener_nombre(
+                producto_id
+            )
+
+            if not datos.producto_existe(
+                producto_id
+            ):
+
+                raise ValueError(
+                    "El producto no existe."
+                )
+
+            precio = datos.PRECIOS[
+                producto_id
+            ]
+
+            # Buscar si el producto
+            # ya está en el carrito.
+
+            for producto in self.carrito:
+
+                if (
+                    producto["producto_id"]
+                    == producto_id
+                ):
+
+                    nueva_cantidad = (
+                        producto["unidades"]
+                        + unidades
+                    )
+
+                    if nueva_cantidad > (
+                        datos.STOCK[producto_id]
+                    ):
+
+                        raise ValueError(
+                            "La cantidad supera "
+                            "el stock disponible."
+                        )
+
+                    producto["unidades"] = (
+                        nueva_cantidad
+                    )
+
+                    producto["subtotal"] = (
+                        nueva_cantidad * precio
+                    )
+
+                    self.actualizar_carrito()
+
+                    self.unidades_entry.delete(
+                        0,
+                        tk.END
+                    )
+
+                    return
+
+            if unidades > datos.STOCK[
+                producto_id
+            ]:
+
+                raise ValueError(
+                    "No existe suficiente stock."
+                )
+
+            producto_carrito = {
+                "producto_id": producto_id,
+                "producto": nombre,
+                "unidades": unidades,
+                "precio": precio,
+                "subtotal": precio * unidades
+            }
+
+            self.carrito.append(
+                producto_carrito
+            )
+
+            self.actualizar_carrito()
+
+            self.unidades_entry.delete(
+                0,
+                tk.END
+            )
+
+        except ValueError as error:
+
+            messagebox.showerror(
+                "Error",
+                str(error)
+            )
+
+    # ==================================================
+    # ACTUALIZAR CARRITO
+    # ==================================================
+
+    def actualizar_carrito(self):
+
+        for item in (
+            self.tabla_carrito.get_children()
+        ):
+
+            self.tabla_carrito.delete(
+                item
+            )
+
+        total = 0
+
+        for producto in self.carrito:
+
+            self.tabla_carrito.insert(
+                "",
+                "end",
+                values=(
+                    producto["producto_id"],
+                    producto["producto"],
+                    producto["unidades"],
+                    f"${producto['precio']:.2f}",
+                    f"${producto['subtotal']:.2f}"
+                )
+            )
+
+            total += producto["subtotal"]
+
+        self.label_total.config(
+            text=f"Total: ${total:.2f}"
+        )
+
+    # ==================================================
+    # QUITAR DEL CARRITO
+    # ==================================================
+
+    def quitar_del_carrito(self):
+
+        seleccionado = (
+            self.tabla_carrito.selection()
+        )
+
+        if not seleccionado:
+
+            messagebox.showwarning(
+                "Carrito",
+                "Seleccione un producto."
+            )
+
+            return
+
+        item = self.tabla_carrito.item(
+            seleccionado[0]
+        )
+
+        producto_id = item["values"][0]
+
+        for producto in self.carrito:
+
+            if (
+                producto["producto_id"]
+                == producto_id
+            ):
+
+                self.carrito.remove(
+                    producto
+                )
+
+                break
+
+        self.actualizar_carrito()
+
+    # ==================================================
+    # VACIAR CARRITO
+    # ==================================================
+
+    def vaciar_carrito(self):
+
+        if not self.carrito:
+
+            messagebox.showwarning(
+                "Carrito",
+                "El carrito ya está vacío."
+            )
+
+            return
+
+        self.carrito.clear()
+
+        self.actualizar_carrito()
+
+    # ==================================================
+    # REGISTRAR COMPRA COMPLETA
+    # ==================================================
+
+    def registrar_compra(self):
+
+        if not self.carrito:
+
+            messagebox.showwarning(
+                "Compra",
+                "Debe agregar al menos un producto."
+            )
+
+            return
+
+        ventas_registradas = []
+
+        total_compra = 0
+
+        try:
+
+            for producto in self.carrito:
+
+                venta, mensaje = registrar_venta(
+                    producto["producto_id"],
+                    producto["unidades"]
+                )
+
+                if venta is None:
+
+                    registrar_log(
+                        f"Intento de compra fallido | "
+                        f"Producto: "
+                        f"{producto['producto_id']} | "
+                        f"Unidades: "
+                        f"{producto['unidades']} | "
+                        f"Motivo: {mensaje}"
+                    )
+
+                    raise ValueError(
+                        mensaje
+                    )
+
+                ventas_registradas.append(
+                    venta
+                )
+
+                total_compra += (
+                    venta["total"]
+                )
 
         except ValueError as error:
 
@@ -275,51 +703,33 @@ class MiniTiendaApp:
 
         else:
 
-            venta, mensaje = registrar_venta(
-                producto_id,
-                unidades
+            for venta in ventas_registradas:
+
+                guardar_venta_csv(
+                    venta
+                )
+
+            messagebox.showinfo(
+                "Compra registrada",
+                (
+                    "Compra registrada correctamente.\n\n"
+                    f"Productos: "
+                    f"{len(ventas_registradas)}\n"
+                    f"Total: ${total_compra:.2f}"
+                )
             )
 
         finally:
 
-            self.unidades_entry.delete(
-                0,
-                tk.END
-            )
+            self.carrito.clear()
 
-        if venta is None:
+            self.actualizar_carrito()
 
-            registrar_log(
-                f"Intento de venta fallido | "
-                f"Producto: {producto_id} | "
-                f"Unidades: {unidades} | "
-                f"Motivo: {mensaje}"
-            )
+            self.actualizar_catalogo()
 
-            messagebox.showerror(
-                "Venta no registrada",
-                mensaje
-            )
-
-            return
-
-        guardar_venta_csv(
-            venta
-        )
-
-        messagebox.showinfo(
-            "Venta registrada",
-            (
-                f"Producto: {venta['producto']}\n"
-                f"Unidades: {venta['unidades']}\n"
-                f"Descuento: ${venta['descuento']:.2f}\n"
-                f"Total: ${venta['total']:.2f}"
-            )
-        )
-
-    # --------------------------------------------------
-    # OPCIÓN 2
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 2: CATÁLOGO
+    # ==================================================
 
     def actualizar_catalogo(self):
 
@@ -397,7 +807,9 @@ class MiniTiendaApp:
         # WHILE
         indice = 0
 
-        while indice < len(datos.CATALOGO):
+        while indice < len(
+            datos.CATALOGO
+        ):
 
             producto_id, nombre = (
                 datos.CATALOGO[indice]
@@ -416,9 +828,9 @@ class MiniTiendaApp:
 
             indice += 1
 
-    # --------------------------------------------------
-    # OPCIÓN 3
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 3: VENTAS
+    # ==================================================
 
     def mostrar_ventas(self):
 
@@ -448,6 +860,7 @@ class MiniTiendaApp:
             return
 
         columnas = (
+            "fecha",
             "producto",
             "unidades",
             "precio",
@@ -460,6 +873,11 @@ class MiniTiendaApp:
             columns=columnas,
             show="headings",
             height=15
+        )
+
+        tabla.heading(
+            "fecha",
+            text="Fecha"
         )
 
         tabla.heading(
@@ -487,13 +905,13 @@ class MiniTiendaApp:
             text="Total"
         )
 
-        # FOR
         for _, fila in df.iterrows():
 
             tabla.insert(
                 "",
                 "end",
                 values=(
+                    fila["fecha"],
                     fila["producto"],
                     fila["unidades"],
                     f"${float(fila['precio_unitario']):.2f}",
@@ -507,9 +925,9 @@ class MiniTiendaApp:
             expand=True
         )
 
-    # --------------------------------------------------
-    # OPCIÓN 4
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 4: ESTADÍSTICAS
+    # ==================================================
 
     def mostrar_metricas(self):
 
@@ -525,11 +943,11 @@ class MiniTiendaApp:
             return
 
         mensaje = (
-            f"INGRESOS TOTALES\n"
+            "INGRESOS TOTALES\n"
             f"${metricas['suma']:.2f}\n\n"
-            f"PROMEDIO POR VENTA\n"
+            "PROMEDIO POR VENTA\n"
             f"${metricas['media']:.2f}\n\n"
-            f"DESVIACIÓN ESTÁNDAR\n"
+            "DESVIACIÓN ESTÁNDAR\n"
             f"${metricas['desviacion']:.2f}"
         )
 
@@ -538,9 +956,9 @@ class MiniTiendaApp:
             mensaje
         )
 
-    # --------------------------------------------------
-    # OPCIÓN 5
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 5: GRÁFICO
+    # ==================================================
 
     def mostrar_grafico(self):
 
@@ -553,9 +971,9 @@ class MiniTiendaApp:
                 "No existen ventas para graficar."
             )
 
-    # --------------------------------------------------
-    # OPCIÓN 6
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 6: EXPORTAR PNG
+    # ==================================================
 
     def exportar_png(self):
 
@@ -575,9 +993,9 @@ class MiniTiendaApp:
                 "No existen ventas para exportar."
             )
 
-    # --------------------------------------------------
-    # OPCIÓN 7
-    # --------------------------------------------------
+    # ==================================================
+    # OPCIÓN 7: AGREGAR PRODUCTO
+    # ==================================================
 
     def mostrar_agregar_producto(self):
 
@@ -611,9 +1029,7 @@ class MiniTiendaApp:
             pady=8
         )
 
-        id_entry = tk.Entry(
-            frame
-        )
+        id_entry = tk.Entry(frame)
 
         id_entry.grid(
             row=0,
@@ -631,9 +1047,7 @@ class MiniTiendaApp:
             pady=8
         )
 
-        nombre_entry = tk.Entry(
-            frame
-        )
+        nombre_entry = tk.Entry(frame)
 
         nombre_entry.grid(
             row=1,
@@ -651,9 +1065,7 @@ class MiniTiendaApp:
             pady=8
         )
 
-        precio_entry = tk.Entry(
-            frame
-        )
+        precio_entry = tk.Entry(frame)
 
         precio_entry.grid(
             row=2,
@@ -671,9 +1083,7 @@ class MiniTiendaApp:
             pady=8
         )
 
-        stock_entry = tk.Entry(
-            frame
-        )
+        stock_entry = tk.Entry(frame)
 
         stock_entry.grid(
             row=3,
@@ -705,21 +1115,25 @@ class MiniTiendaApp:
                 )
 
                 if not producto_id:
+
                     raise ValueError(
                         "El ID no puede estar vacío."
                     )
 
                 if not nombre:
+
                     raise ValueError(
                         "El nombre no puede estar vacío."
                     )
 
                 if precio <= 0:
+
                     raise ValueError(
                         "El precio debe ser mayor que cero."
                     )
 
                 if stock < 0:
+
                     raise ValueError(
                         "El stock no puede ser negativo."
                     )
@@ -733,7 +1147,6 @@ class MiniTiendaApp:
 
                 return
 
-            # TRY / EXCEPT / ELSE
             else:
 
                 agregado = agregar_producto(
@@ -759,7 +1172,6 @@ class MiniTiendaApp:
 
                 self.actualizar_catalogo()
 
-            # FINALLY
             finally:
 
                 id_entry.focus()
@@ -775,18 +1187,27 @@ class MiniTiendaApp:
             columnspan=2,
             pady=15
         )
-        
+
+    # ==================================================
+    # OPCIÓN 8: GENERAR 10 VENTAS
+    # ==================================================
+
     def generar_ventas(self):
-    
+
         try:
 
-            ventas = generar_ventas_prueba(10)
+            ventas = generar_ventas_prueba(
+                10
+            )
 
         except Exception as error:
 
             messagebox.showerror(
                 "Error",
-                f"No se pudieron generar las ventas:\n{error}"
+                (
+                    "No se pudieron generar "
+                    f"las ventas:\n{error}"
+                )
             )
 
             return
@@ -805,5 +1226,8 @@ class MiniTiendaApp:
 
         messagebox.showinfo(
             "Ventas generadas",
-            f"Se generaron {len(ventas)} ventas de prueba."
+            (
+                f"Se generaron "
+                f"{len(ventas)} ventas de prueba."
+            )
         )

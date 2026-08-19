@@ -13,7 +13,9 @@ def guardar_venta_csv(venta):
     Guarda una venta en ventas.csv.
     """
 
-    archivo_existe = os.path.exists(ARCHIVO_CSV)
+    archivo_existe = os.path.exists(
+        ARCHIVO_CSV
+    )
 
     with open(
         ARCHIVO_CSV,
@@ -39,6 +41,7 @@ def guardar_venta_csv(venta):
         )
 
         if not archivo_existe:
+
             escritor.writeheader()
 
         escritor.writerow(venta)
@@ -46,7 +49,7 @@ def guardar_venta_csv(venta):
 
 def registrar_log(mensaje):
     """
-    Guarda mensajes y errores en log.txt.
+    Registra mensajes en log.txt.
     """
 
     with open(
@@ -55,24 +58,42 @@ def registrar_log(mensaje):
         encoding="utf-8"
     ) as archivo:
 
-        archivo.write(mensaje + "\n")
+        archivo.write(
+            mensaje + "\n"
+        )
 
 
 def cargar_ventas_csv():
     """
-    Lee las ventas almacenadas en el CSV.
+    Lee las ventas desde ventas.csv.
+
+    Controla el caso donde el archivo
+    todavía no existe.
     """
 
-    if not os.path.exists(ARCHIVO_CSV):
+    try:
+
+        with open(
+            ARCHIVO_CSV,
+            "r",
+            newline="",
+            encoding="utf-8"
+        ) as archivo:
+
+            lector = csv.DictReader(
+                archivo
+            )
+
+            datos = list(lector)
+
+    except FileNotFoundError:
+
         return []
 
-    with open(
-        ARCHIVO_CSV,
-        "r",
-        newline="",
-        encoding="utf-8"
-    ) as archivo:
+    else:
 
-        lector = csv.DictReader(archivo)
+        return datos
 
-        return list(lector)
+    finally:
+
+        pass
